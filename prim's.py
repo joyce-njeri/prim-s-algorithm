@@ -23,9 +23,10 @@ key_values[5] = 0
 selected_node[5] = True
 
 # print edge and weight
-print('\nEdge \tWeight')
+print('\nEdge \tWeight\n')
 
 edges = 0 
+weight_sum = 0
 
 # loop through all the edges in input graph
 while edges < vertices - 1:
@@ -47,10 +48,13 @@ while edges < vertices - 1:
                         a = i
                         b = j
 
+    weight_sum += input_graph[a][b]
     # print edges and weights
     print(str(a + 1) + " -> " + str(b + 1) + " \t " + str(input_graph[a][b]))
+
     # update first set included in MST
     selected_node[b] = True
     edges += 1
 
+print("\nSum of weights:", weight_sum)
 print('\n')
